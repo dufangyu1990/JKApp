@@ -1,0 +1,293 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zhaungchebiaoqian"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin10"
+                    android:padding="@dimen/margin5"
+                    android:src="@drawable/touxiang" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:padding="@dimen/margin5"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/my_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text16" />
+
+                    <TextView
+                        android:id="@+id/my_departname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/white"
+                        android:text="456"
+                        android:textSize="@dimen/text16" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin10"
+                    android:id="@+id/changepw_rel"
+                    android:clickable="true"
+                    android:background="@drawable/setlist_selector"
+                    >
+
+
+                    <ImageView
+
+                        android:id="@+id/changepwimg"
+                        android:src="@drawable/shezhi"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/margin5"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/changepwimg"
+                        android:drawableRight="@drawable/jiantouleft"
+                        android:layout_marginLeft="@dimen/margin10"
+                        android:layout_centerVertical="true"
+                        android:text="@string/SystemSet"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text16" />
+                </RelativeLayout>
+
+                <include layout="@layout/commonview"/>
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin10"
+                    android:id="@+id/makenew_rel"
+                    android:clickable="true"
+                    android:background="@drawable/setlist_selector"
+                    >
+
+                    <ImageView
+
+                        android:id="@+id/news"
+                        android:src="@drawable/mima"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/margin5"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_toRightOf="@id/news"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin10"
+                        android:drawableRight="@drawable/jiantouleft"
+                        android:layout_centerVertical="true"
+                        android:text="@string/changePas"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text16" />
+                </RelativeLayout>
+                <include layout="@layout/commonview"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin10"
+                    android:id="@+id/returnavs_rel"
+                    android:clickable="true"
+                    android:background="@drawable/setlist_selector"
+                    >
+
+
+                    <ImageView
+
+                        android:id="@+id/advsimg"
+                        android:src="@drawable/yijian"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/margin5"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/returnAvs"
+                        android:layout_toRightOf="@id/advsimg"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin10"
+                        android:drawableRight="@drawable/jiantouleft"
+                        android:layout_centerVertical="true"
+                        android:text="@string/returnAdvs"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text16" />
+                </RelativeLayout>
+                <include layout="@layout/commonview"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:orientation="vertical">
+
+
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin10"
+                        android:clickable="true"
+                        android:id="@+id/about_rel"
+                        android:background="@drawable/setlist_selector"
+                        >
+
+
+                        <ImageView
+
+                            android:id="@+id/aboutimg"
+                            android:src="@drawable/guanyu"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="@dimen/margin5"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_toRightOf="@id/aboutimg"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin10"
+                            android:drawableRight="@drawable/jiantouleft"
+                            android:layout_centerVertical="true"
+                            android:text="@string/about"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/text16" />
+                    </RelativeLayout>
+
+
+                    <include layout="@layout/commonview"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin40"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:id="@+id/changeuser"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/exit_selector"
+                        android:padding="@dimen/margin10"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:text="@string/exitLogin"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text16" />
+                </LinearLayout>
+                <include layout="@layout/commonview"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

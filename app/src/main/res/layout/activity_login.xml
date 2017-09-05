@@ -1,0 +1,168 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_layout"
+    android:fitsSystemWindows="true"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/zhaungchebiaoqian"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <include layout="@layout/title_bar"/>
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin125"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal"
+
+            />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin100"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin40"
+                    android:id="@+id/netstateTv"
+                    android:textColor="@color/black"
+                    android:paddingLeft="@dimen/margin15"
+                    android:text="@string/strLinkStateLabel"
+                    android:textSize="14sp"
+                    />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/miaobian_selector"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin15">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/yonghuming" />
+
+            <EditText
+                android:id="@+id/user_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin10"
+                android:background="@null"
+                android:layout_weight="1"
+                android:hint="请输入用户名/手机号"
+                android:maxLength="11"
+                android:singleLine="true"
+                android:textColor="@color/text_color"
+                android:textColorHint="#bbb"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text18" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/miaobian_selector1"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin15">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/psaaword" />
+
+            <EditText
+                android:id="@+id/pass_word_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin10"
+                android:background="@null"
+                android:layout_weight="1"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:textColor="@color/text_color"
+                android:singleLine="true"
+                android:textColorHint="#bbb"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text18" />
+
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:paddingLeft="@dimen/margin15"
+            android:paddingTop="@dimen/margin10"
+
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/SavePassCheck"
+                android:button="@null"
+                android:layout_centerVertical="true"
+                android:drawableLeft="@drawable/mycheckbox"
+                android:drawablePadding="@dimen/margin10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="1dp"
+                android:text="@string/strSavePass" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin20"
+            android:layout_marginRight="@dimen/margin20"
+            android:layout_marginTop="@dimen/margin40"
+            android:background="@drawable/login"
+            android:gravity="center"
+            android:enabled="false"
+            android:padding="@dimen/margin10"
+            android:text="登录"
+            android:textSize="@dimen/text18"
+            android:textColor="@drawable/log_text_color" />
+       </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

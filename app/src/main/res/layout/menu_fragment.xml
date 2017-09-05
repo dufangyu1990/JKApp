@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/menu_arr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white2"
+        android:orientation="horizontal">
+
+
+
+
+        <RadioButton
+            android:id="@+id/tab_search"
+            style="@style/menu_style"
+            android:drawableTop="@drawable/tab_search_selector"
+            android:text="@string/findcar" />
+        <RadioButton
+            android:id="@+id/tab_tongji"
+            style="@style/menu_style"
+            android:drawableTop="@drawable/tab_tongji_selector"
+            android:text="@string/tongji" />
+
+        <RadioButton
+            android:id="@+id/tab_fixcar"
+            style="@style/menu_style"
+            android:drawableTop="@drawable/tab_fixcar_selector"
+            android:text="@string/fixcar"
+            />
+        <RadioButton
+            android:id="@+id/tab_myself"
+            style="@style/menu_style"
+            android:drawableTop="@drawable/tab_myself_selector"
+            android:text="@string/myself" />
+
+    </RadioGroup>
+
+
+
+</RelativeLayout>
