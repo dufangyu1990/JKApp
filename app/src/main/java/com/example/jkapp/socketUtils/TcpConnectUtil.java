@@ -431,7 +431,6 @@ public class TcpConnectUtil {
                                     String strParam2, String strParam3, String strParam4, String strParam5, String strParam6,
                                     String strParam7, String strParam8)
     {
-        LogUtil.d("dfy","ClintReceBcCommData  ");
         int i,j;
         if (intDataType == 1106) {
             p_intTempCount = Integer.parseInt(strParam1);

@@ -3,7 +3,6 @@ package com.example.jkapp.biz;
 import com.example.jkapp.CallBack.DataCallBackImp;
 import com.example.jkapp.manager.DataManager;
 import com.example.jkapp.socketUtils.TcpConnectUtil;
-import com.example.jkapp.utils.LogUtil;
 
 /**
  * Created by dufangyu on 2017/9/5.
@@ -28,8 +27,8 @@ public class MainBiz implements IMain{
     @Override
     public void getDepResult(String depCode, String loginName) {
 
-        LogUtil.d("dfy","depCode = "+depCode);
-        LogUtil.d("dfy","loginName = "+loginName);
+//        LogUtil.d("dfy","depCode = "+depCode);
+//        LogUtil.d("dfy","loginName = "+loginName);
         TcpConnectUtil.getTcpInstance().IntiTemp();
         TcpConnectUtil.getTcpInstance().ClintSendBcCommData(1107, "0", "1", "1", "", "", "", "", "", "", "", depCode, loginName, "", "", "", "", "", "");
     }
@@ -41,7 +40,6 @@ public class MainBiz implements IMain{
 
         @Override
         public void onReceiveServerResult(int intDataType, String strDataType, String strSetSN, String strSetSN1, String strAlmComType, String strParam1, String strParam2, String strParam3) {
-            LogUtil.d("dfy","onReceiveServerResult"+intDataType);
             if(intDataType==1105)
             {
                 if(strParam1.equals("0"))//登录失败
@@ -52,12 +50,11 @@ public class MainBiz implements IMain{
                     listener.loginSuccess();
 
                 }
-            }else if(intDataType ==1107)
+            }else if(intDataType ==1106||intDataType ==1107)
             {
 
                 if(strDataType.equals("0"))
                 {
-                    LogUtil.d("dfy","保存部门表");
                     DataManager.getManagerInstance().saveDepListData();
 
                 }
