@@ -172,6 +172,7 @@ public class LoginView extends ViewImpl{
         }else{
             MyApplication.getInstance().setBooleanPerference("isRemember", false);
             MyApplication.getInstance().setStringPerference("UserName", accountText.getText().toString().trim());
+            MyApplication.getInstance().setStringPerference("Password", passwordText.getText().toString().trim());
         }
     }
 

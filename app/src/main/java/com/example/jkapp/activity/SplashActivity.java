@@ -120,7 +120,6 @@ public class SplashActivity extends ActivityPresentImpl<SplashView> implements V
 
     @Override
     public void pressAgainExit() {
-        super.pressAgainExit();
         finish();
         System.exit(0);
     }

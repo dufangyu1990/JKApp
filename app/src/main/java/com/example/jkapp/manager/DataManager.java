@@ -35,5 +35,17 @@ public class DataManager {
         }
     }
 
+    //退出登录的时候重置数据
+    public void resetData()
+    {
+        //清空部门表
+        if(p_intDepCount!=0){
+            for(int i=0;i<p_intDepCount;i++){
+                p_strDepList[i][0]="";
+            }
+        }
+        p_intDepCount = 0;
+    }
+
 
 }

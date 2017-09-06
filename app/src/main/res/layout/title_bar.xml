@@ -17,7 +17,7 @@
             android:drawablePadding="@dimen/margin7"
             android:text="@string/scan_back"
             android:textColor="@color/white"
-            android:textSize="@dimen/text18"
+            android:textSize="@dimen/text16"
             android:padding="@dimen/margin10"
             android:layout_alignParentLeft="true"
             android:visibility="invisible" />

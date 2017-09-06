@@ -37,6 +37,12 @@
         <activity android:name=".activity.SystemSetActivity"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".activity.ModifyPwdActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.AboutUsActivity"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

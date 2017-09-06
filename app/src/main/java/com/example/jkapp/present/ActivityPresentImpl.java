@@ -143,7 +143,7 @@ public  class ActivityPresentImpl<T extends IView>extends AppCompatActivity impl
 
 
     public void pressAgainExit(){
-
+        finish();
     }
 
     //app连接不上服务器(断网或者服务器出问题)

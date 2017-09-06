@@ -88,4 +88,15 @@ public class MainActivity extends FragmentActivityPresentImpl<MainView> implemen
     public void jumpToSystemSetActivity() {
         SystemSetActivity.actionStart(this,strShareUserName);
     }
+
+    @Override
+    public void jumpToAboutActivity() {
+        AboutUsActivity.actionStart(this);
+    }
+
+    @Override
+    public void jumpToModifyPawActivity(String loginName,String pwdStr) {
+        ModifyPwdActivity.actionStart(this,loginName,pwdStr);
+    }
+
 }

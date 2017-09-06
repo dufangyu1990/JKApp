@@ -24,6 +24,7 @@ public class CustomDialog extends Dialog {
 	 private static CustomDialog dialog;
 	private static Handler mHandler = new Handler();
 
+	private static Context context;
 
 
 	public CustomDialog(Context context) {
@@ -31,7 +32,9 @@ public class CustomDialog extends Dialog {
 	}
 
 	public CustomDialog(Context context, int theme) {
+
 		super(context, theme);
+		this.context = context;
 	}
 
 	/**
@@ -124,6 +127,29 @@ public class CustomDialog extends Dialog {
 		}
 	}
 
+	public static void setAutoDismiss(boolean flag, long time, final boolean finish)
+	{
+		if(flag)
+		{
+			mHandler.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					dismisDialog();
+					if(finish)
+					{
+						((Activity) context).finish();
+					}
+				}
+			},time);
+		}
+	}
+
+
+
+	public static boolean isNull()
+	{
+		return dialog==null? true:false;
+	}
 
 
 	public  static void dismisDialog(){

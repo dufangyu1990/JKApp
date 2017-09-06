@@ -19,6 +19,7 @@ public class MyView extends ViewImpl{
     private RelativeLayout sytem_layout,changepwd_layout,yijian_layout,about_layout;
     private TextView exitlogin;
 
+
     @Override
     public void initView() {
         usernametv = findViewById(R.id.my_name);
@@ -56,4 +57,8 @@ public class MyView extends ViewImpl{
             depnametv.setText(value);
         }
     }
+
+
+
+
 }

@@ -6,13 +6,19 @@ import android.view.View;
 
 import com.example.jkapp.R;
 import com.example.jkapp.present.ActivityPresentImpl;
-import com.example.jkapp.view.SystemSetView;
+import com.example.jkapp.view.AboutUsView;
 
 /**
  * Created by dufangyu on 2017/9/6.
  */
 
-public class SystemSetActivity extends ActivityPresentImpl<SystemSetView>implements View.OnClickListener{
+public class AboutUsActivity extends ActivityPresentImpl<AboutUsView> implements View.OnClickListener{
+    public  static void actionStart(Context context)
+    {
+        Intent intent = new Intent(context,AboutUsActivity.class);
+        context.startActivity(intent);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId())
@@ -22,15 +28,4 @@ public class SystemSetActivity extends ActivityPresentImpl<SystemSetView>impleme
                 break;
         }
     }
-
-
-
-    public  static void actionStart(Context context, String loginName)
-    {
-        Intent intent = new Intent(context,SystemSetActivity.class);
-        intent.putExtra("loginName", loginName);
-        context.startActivity(intent);
-    }
-
-
 }

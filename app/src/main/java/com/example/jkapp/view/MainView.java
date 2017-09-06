@@ -13,6 +13,7 @@ import com.example.jkapp.fragment.FixcarPageFragment;
 import com.example.jkapp.fragment.MyFragment;
 import com.example.jkapp.fragment.SearchPageFragment;
 import com.example.jkapp.fragment.TongjiPageFragment;
+import com.example.jkapp.utils.LogUtil;
 
 /**
  * Created by dufangyu on 2017/8/31.
@@ -78,6 +79,7 @@ public class MainView extends ViewImpl{
                             myFragment = new MyFragment();
                             Bundle bundle = new Bundle();
                             bundle.putString("username", MyApplication.getInstance().getStringPerference("UserName"));
+                            bundle.putString("password", MyApplication.getInstance().getStringPerference("Password"));
                             myFragment.setArguments(bundle);
                             transaction.add(R.id.ll_content, myFragment);
                         } else {
