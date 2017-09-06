@@ -76,6 +76,7 @@
     <string name="Tongjifenxi">统计分析</string>
     <string name="onlineTongji">在线离线统计</string>
     <string name="alarmTongji">报警统计</string>
+    <string name="alarmtuisong">报警推送</string>
     <string name="showCarInfo">车辆信息</string>
     <string name="MeliageInfo">里程统计详情</string>
     <string name="OverMeliageInfo">超里程统计详情</string>
@@ -83,6 +84,7 @@
     <string name="CarInfo">车辆详情</string>
     <string name="AlarmCarInfo">报警详情</string>
     <string name="SystemSet">系统设置</string>
+    <string name="Statetongji">状态统计</string>
     <string name="PublishAdv">发布反馈信息</string>
     <string name="AdvInfo">反馈详情</string>
     <string name="ModifyPassword">修改密码</string>

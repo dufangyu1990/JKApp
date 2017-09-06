@@ -9,11 +9,12 @@ import com.example.jkapp.R;
 import com.example.jkapp.biz.IMain;
 import com.example.jkapp.biz.MainBiz;
 import com.example.jkapp.biz.MainListener;
+import com.example.jkapp.listener.JumpToActivityListener;
 import com.example.jkapp.present.FragmentActivityPresentImpl;
 import com.example.jkapp.utils.MyToast;
 import com.example.jkapp.view.MainView;
 
-public class MainActivity extends FragmentActivityPresentImpl<MainView> implements MainListener{
+public class MainActivity extends FragmentActivityPresentImpl<MainView> implements MainListener,JumpToActivityListener{
 
     private long exitTime=0;
 
@@ -83,4 +84,8 @@ public class MainActivity extends FragmentActivityPresentImpl<MainView> implemen
 
     }
 
+    @Override
+    public void jumpToSystemSetActivity() {
+        SystemSetActivity.actionStart(this,strShareUserName);
+    }
 }

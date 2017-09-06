@@ -2,7 +2,6 @@ package com.example.jkapp.biz;
 
 import com.example.jkapp.CallBack.DataCallBackImp;
 import com.example.jkapp.socketUtils.TcpConnectUtil;
-import com.example.jkapp.utils.LogUtil;
 
 /**
  * Created by dufangyu on 2017/9/5.
@@ -20,7 +19,7 @@ public class SplashBiz implements ISplash{
     @Override
     public void checkVersion(String old_versionCode,SplashListener listener) {
         this.listener = listener;
-        LogUtil.d("dfy","old_versionCode = "+old_versionCode);
+//        LogUtil.d("dfy","old_versionCode = "+old_versionCode);
         TcpConnectUtil.getTcpInstance().IntiTemp();
         TcpConnectUtil.getTcpInstance().ClintSendBcCommData(1105, "0010", "", "", "", "", "", "", "", "", "", old_versionCode, "", "", "", "", "", "", "");
 
@@ -31,7 +30,7 @@ public class SplashBiz implements ISplash{
 
         @Override
         public void onReceiveServerResult(int intDataType, String strDataType, String strSetSN, String strSetSN1, String strAlmComType, String strParam1, String strParam2, String strParam3) {
-            LogUtil.d("dfy","strParam1 = "+strParam1);
+//            LogUtil.d("dfy","strParam1 = "+strParam1);
             if(intDataType==1105)
             {
                 if(strDataType.equals("1010"))

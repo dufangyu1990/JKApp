@@ -52,11 +52,9 @@ public class MainBiz implements IMain{
                 }
             }else if(intDataType ==1106||intDataType ==1107)
             {
-
                 if(strDataType.equals("0"))
                 {
                     DataManager.getManagerInstance().saveDepListData();
-
                 }
             }
         }

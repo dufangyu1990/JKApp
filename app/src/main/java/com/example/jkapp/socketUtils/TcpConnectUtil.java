@@ -68,7 +68,6 @@ public class TcpConnectUtil {
 
     public void setDataCallBack(DataCallBack callback)
     {
-        LogUtil.d("dfy","setDataCallBack");
         mDataCallBack = callback;
     }
 
@@ -374,7 +373,7 @@ public class TcpConnectUtil {
             if (intDataType == 1100) {
                 // 连接成功
                 p_intStateCode = TCPLINK;
-                LogUtil.d("dfy","mCallBack = "+mCallBack);
+//                LogUtil.d("dfy","mCallBack = "+mCallBack);
                 if(mCallBack!=null)
                     mCallBack.onHandle(p_intStateCode);
 //                myHandler.post(taskRunnable);
@@ -424,6 +423,30 @@ public class TcpConnectUtil {
     }
 
 
+    /**
+     * 1106接收的是数据条数，当数据条数为0时，后台不会产生1107事件。
+     * 当有数据时，1107和1106可能会互相穿插发生，所以两者里面都做了条数判断
+     * 一个符合条件时就会触发回调事件，另一个就不会再继续走了
+     * @param intDataType
+     * @param strDataType
+     * @param strSetType
+     * @param strSetSN
+     * @param strSetSN1
+     * @param strAlmComType
+     * @param strHisType
+     * @param strPosType
+     * @param strFadeType
+     * @param strRecogType
+     * @param strRecogType1
+     * @param strParam1
+     * @param strParam2
+     * @param strParam3
+     * @param strParam4
+     * @param strParam5
+     * @param strParam6
+     * @param strParam7
+     * @param strParam8
+     */
 
     public void ClintReceBcCommData(int intDataType, String strDataType, String strSetType, String strSetSN,
                                     String strSetSN1, String strAlmComType, String strHisType, String strPosType,
@@ -435,18 +458,16 @@ public class TcpConnectUtil {
         if (intDataType == 1106) {
             p_intTempCount = Integer.parseInt(strParam1);
             if (p_intTempCount == 0) {
-                LogUtil.d("dfy","mDataCallBack = "+mDataCallBack);
+//                LogUtil.d("dfy","mDataCallBack = "+mDataCallBack);
                 if(mDataCallBack!=null)
                     mDataCallBack.onReceiveResult(intDataType,strDataType,strSetSN,strSetSN1,strAlmComType,strParam1,strParam2,strParam3);
-//                TempJudge(strDataType,strParam2);
             } else {
                 if (p_intTempProCount >= p_intTempCount)
                 {
                     p_intTempProCount=0;
-                    LogUtil.d("dfy","mDataCallBack = "+mDataCallBack);
+//                    LogUtil.d("dfy","mDataCallBack = "+mDataCallBack);
                     if(mDataCallBack!=null)
                         mDataCallBack.onReceiveResult(intDataType,strDataType,strSetSN,strSetSN1,strAlmComType,strParam1,strParam2,strParam3);
-//                    TempJudge(strDataType,strParam2);
                 }
             }
         }
@@ -480,7 +501,7 @@ public class TcpConnectUtil {
             }
             if (p_intTempProCount >= p_intTempCount && p_intTempCount>0) {
                 p_intTempProCount=0;
-                LogUtil.d("dfy","mDataCallBack = "+mDataCallBack);
+//                LogUtil.d("dfy","mDataCallBack = "+mDataCallBack);
                 if(mDataCallBack!=null)
                     mDataCallBack.onReceiveResult(intDataType,strDataType,strSetSN,strSetSN1,strAlmComType,strParam1,strParam2,strParam3);
 //                TempJudge(strDataType,strParam2);
@@ -489,7 +510,7 @@ public class TcpConnectUtil {
 
         if(intDataType == 1105)
         {
-            LogUtil.d("dfy","mDataCallBack = "+mDataCallBack);
+//            LogUtil.d("dfy","mDataCallBack = "+mDataCallBack);
             if(mDataCallBack!=null)
                 mDataCallBack.onReceiveResult(intDataType,strDataType,strSetSN,strSetSN1,strAlmComType,strParam1,strParam2,strParam3);
         }

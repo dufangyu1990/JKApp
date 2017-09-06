@@ -10,6 +10,7 @@ import com.example.jkapp.biz.ILogin;
 import com.example.jkapp.biz.LoginBiz;
 import com.example.jkapp.biz.LoginListener;
 import com.example.jkapp.customview.CustomDialog;
+import com.example.jkapp.customview.CustomLoadDialog;
 import com.example.jkapp.present.ActivityPresentImpl;
 import com.example.jkapp.socketUtils.TcpConnectUtil;
 import com.example.jkapp.utils.MyToast;
@@ -70,9 +71,12 @@ public class LoginActivity extends ActivityPresentImpl<LoginView> implements Vie
 
         String loginName = mView.getTextValue(R.id.user_name_et);
         String password = mView.getTextValue(R.id.pass_word_et);
+
+        CustomLoadDialog.show(LoginActivity.this,"",true,null,R.layout.logindialog);
         loginBiz.login(loginName, password, new LoginListener() {
             @Override
             public void loginSuccess(String code) {
+                CustomLoadDialog.dismisDialog();
                 mView.saveAccountNdPwd();
                 MainActivity.actionStart(LoginActivity.this,true,code);
                 finish();
@@ -80,6 +84,7 @@ public class LoginActivity extends ActivityPresentImpl<LoginView> implements Vie
 
             @Override
             public void loginFailed() {
+                CustomLoadDialog.dismisDialog();
                 CustomDialog.show(LoginActivity.this, getResources().getString(R.string.loginfail), false, null, R.layout.text_dialog);
                 CustomDialog.setAutoDismiss(true, 1500);
 
