@@ -99,4 +99,10 @@ public class MainActivity extends FragmentActivityPresentImpl<MainView> implemen
         ModifyPwdActivity.actionStart(this,loginName,pwdStr);
     }
 
+    @Override
+    public void jumpToReturnAdvActivity(String loginName) {
+
+        AdvActivity.actionStart(this,loginName);
+    }
+
 }

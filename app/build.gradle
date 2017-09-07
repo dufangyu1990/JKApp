@@ -31,4 +31,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile files('libs/core-2.3.0.jar')
     compile project(':OkHttpFinal')
+    compile project(':library')
 }

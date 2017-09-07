@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 
 import com.example.jkapp.CallBack.NetCallBackImp;
 import com.example.jkapp.R;
+import com.example.jkapp.bean.BaseEneity;
 import com.example.jkapp.helper.GenericHelper;
 import com.example.jkapp.socketUtils.TcpConnectUtil;
 import com.example.jkapp.utils.ActivityControl;
@@ -65,6 +66,21 @@ public class FragmentActivityPresentImpl<T extends IView>extends FragmentActivit
 
     @Override
     public void presentCallBack(String param1, String param2, String params3) {
+
+    }
+
+    @Override
+    public void logicItemClickHandler(BaseEneity eneity) {
+
+    }
+
+    @Override
+    public void pullRefresh() {
+
+    }
+
+    @Override
+    public void pushLoadMore() {
 
     }
 

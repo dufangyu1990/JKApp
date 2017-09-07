@@ -581,4 +581,15 @@ public class Util {
         return dialog;
     }
 
+    /**
+     * m到n之间的随机数
+     * @param m
+     * @param n
+     * @return
+     */
+    public static int getRandomValue(int m,int n)
+    {
+        return (int)(m+Math.random()*(m-n+1));
+    }
+
 }

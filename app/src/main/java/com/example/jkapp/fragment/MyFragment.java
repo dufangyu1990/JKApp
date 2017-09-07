@@ -72,6 +72,7 @@ public class MyFragment  extends FragmentPresentImpl<MyView> implements View.OnC
                 mListener.jumpToModifyPawActivity(username,password);
                 break;
             case R.id.returnavs_rel:
+                mListener.jumpToReturnAdvActivity(username);
                 break;
             case R.id.about_rel:
                 mListener.jumpToAboutActivity();

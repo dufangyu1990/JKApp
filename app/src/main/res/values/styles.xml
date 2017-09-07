@@ -52,7 +52,19 @@
     <style name="MyBaseTheme" parent="AppTheme">
     </style>
 
-
+    <style name="editTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_search</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:drawableStart">@drawable/sousuohui</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:hint">请输入要搜索的关键词</item>
+    </style>
 
     <!-- 自定义Dialog -->
     <style name="Custom_Progress" parent="@android:style/Theme.Dialog">

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.jkapp.bean.BaseEneity;
 import com.example.jkapp.helper.GenericHelper;
 import com.example.jkapp.view.IView;
 
@@ -57,6 +58,21 @@ public class FragmentPresentImpl<T extends IView> extends Fragment implements IP
 
     @Override
     public void presentCallBack(String param1, String param2, String params3) {
+
+    }
+
+    @Override
+    public void logicItemClickHandler(BaseEneity eneity) {
+
+    }
+
+    @Override
+    public void pullRefresh() {
+
+    }
+
+    @Override
+    public void pushLoadMore() {
 
     }
 

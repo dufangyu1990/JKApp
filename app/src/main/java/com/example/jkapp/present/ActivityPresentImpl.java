@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
 import com.example.jkapp.CallBack.NetCallBackImp;
+import com.example.jkapp.bean.BaseEneity;
 import com.example.jkapp.helper.GenericHelper;
 import com.example.jkapp.socketUtils.TcpConnectUtil;
 import com.example.jkapp.utils.ActivityControl;
@@ -75,6 +76,21 @@ public  class ActivityPresentImpl<T extends IView>extends AppCompatActivity impl
 
     @Override
     public void presentCallBack(String param1, String param2, String params3) {
+
+    }
+
+    @Override
+    public void logicItemClickHandler(BaseEneity eneity) {
+
+    }
+
+    @Override
+    public void pullRefresh() {
+
+    }
+
+    @Override
+    public void pushLoadMore() {
 
     }
 
@@ -160,5 +176,8 @@ public  class ActivityPresentImpl<T extends IView>extends AppCompatActivity impl
     public void doNoNetWork(){
 
     }
+
+
+
 
 }

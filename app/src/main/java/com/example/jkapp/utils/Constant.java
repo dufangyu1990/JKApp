@@ -1,6 +1,9 @@
 package com.example.jkapp.utils;
 
 import android.os.Environment;
+import android.util.SparseIntArray;
+
+import com.example.jkapp.R;
 
 
 public class Constant {
@@ -18,6 +21,17 @@ public class Constant {
 	public static final int TCPNONET = 100;//app一进来就没网，100
 	public static final int TCPDISLINK = 101;//中途突然没网 101
 	public static final int TCPLINK = 102;//连接服务器成功 102
+	public static final String MANAGER="bcadmin";
 
+	/**存储图标资源ID*/
+	public static final SparseIntArray mSpArr_select = new SparseIntArray();
+	static{
+		mSpArr_select.append(0, R.drawable.yonghu1);
+		mSpArr_select.append(1, R.drawable.yonghu2);
+		mSpArr_select.append(2, R.drawable.yonghu3);
+	}
+
+
+	public static final int PAGECOUNTNUM = 20;
 
 }
