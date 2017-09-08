@@ -18,12 +18,14 @@ public class AdvBiz implements IAdv{
     }
 
     @Override
-    public void getAdvsFromServer(int searchFlag,int curIndex,int pageNum,String loginName) {
+    public void getAdvsFromServer(int searchFlag,String searchValue,int curIndex,int pageNum,String loginName) {
 
         TcpConnectUtil.getTcpInstance().IntiTemp();
-        TcpConnectUtil.getTcpInstance().ClintSendBcCommData(1107, "58", searchFlag+"", "", "1", curIndex+"", pageNum+"", "", "", "", "",loginName, "", "", "", "", "", "", "");
+        TcpConnectUtil.getTcpInstance().ClintSendBcCommData(1107, "58", searchFlag+"", searchValue, "1", curIndex+"", pageNum+"", "", "", "", "",loginName, "", "", "", "", "", "", "");
 
     }
+
+
 
     private DataCallBackImp serverCallBack = new DataCallBackImp()
     {

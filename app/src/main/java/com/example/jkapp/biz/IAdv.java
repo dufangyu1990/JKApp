@@ -6,6 +6,6 @@ package com.example.jkapp.biz;
 
 public interface IAdv {
 
-    void getAdvsFromServer(int searchFlag,int curIndex,int pageNum,String loginName);
+    void getAdvsFromServer(int searchFlag,String searchValue,int curIndex,int pageNum,String loginName);
 
 }

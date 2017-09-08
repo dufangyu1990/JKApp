@@ -1,5 +1,6 @@
 package com.wuxiaolong.pullloadmorerecyclerview;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,8 +25,10 @@ public class RecyclerViewOnScroll extends RecyclerView.OnScrollListener {
     private int dataSize;//数据总数,用来判定是否需要显示加载更多
     private int pageCount;//当前页面返回的数据条数,用来判定是否需要显示加载更多
     private int shouldCount;//应该返回的条数
-    public RecyclerViewOnScroll(PullLoadMoreRecyclerView pullLoadMoreRecyclerView) {
+    private SwipeRefreshLayout swipeRefreshLayout;
+    public RecyclerViewOnScroll(PullLoadMoreRecyclerView pullLoadMoreRecyclerView,SwipeRefreshLayout swipeRefreshLayout) {
         this.mPullLoadMoreRecyclerView = pullLoadMoreRecyclerView;
+        this.swipeRefreshLayout = swipeRefreshLayout;
     }
     public RecyclerViewOnScroll(PullLoadMoreRecyclerView pullLoadMoreRecyclerView,int count,int dataSize) {
         this.mPullLoadMoreRecyclerView = pullLoadMoreRecyclerView;
@@ -70,6 +73,12 @@ public class RecyclerViewOnScroll extends RecyclerView.OnScrollListener {
     @Override
     public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
+
+        int topRowVerticalPosition = (recyclerView == null || recyclerView.getChildCount() == 0) ? 0 : recyclerView.getChildAt(0).getTop();
+        swipeRefreshLayout.setEnabled(topRowVerticalPosition >= 0);
+
+
+
         int lastItem = 0;
         int firstItem = 0;
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
@@ -136,19 +145,19 @@ public class RecyclerViewOnScroll extends RecyclerView.OnScrollListener {
 //        Log.d("dfy","isLoadMore() = "+mPullLoadMoreRecyclerView.isLoadMore());
 //        Log.d("dfy","lastItem = "+lastItem);
 //        Log.d("dfy","totalItemCount = "+totalItemCount);
-//        Log.d("dfy","dataSize = "+dataSize);
+//        Log.d("dfy","pageCount = "+pageCount);
         if (mPullLoadMoreRecyclerView.getPushRefreshEnable()
                 && !mPullLoadMoreRecyclerView.isRefresh()
                 && mPullLoadMoreRecyclerView.isHasMore()
                 && (lastItem == totalItemCount - 1)
                 && !mPullLoadMoreRecyclerView.isLoadMore()
 //                && (totalItemCount<dataSize)
-                && (pageCount<shouldCount)
+                && (pageCount==shouldCount)
                 && (dx > 0 || dy > 0)) {
             Log.d("dfy","上拉加载");
             mPullLoadMoreRecyclerView.setIsLoadMore(true);
             mPullLoadMoreRecyclerView.loadMore();
-        }else if((dx > 0 || dy > 0)&&(lastItem == totalItemCount - 1)){
+        }else if((dx > 0 || dy > 0)&&(lastItem == totalItemCount - 1) && (pageCount<shouldCount)){
             mPullLoadMoreRecyclerView.setIsLoadMore(false);
             mPullLoadMoreRecyclerView.noMoreData();
 

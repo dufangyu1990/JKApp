@@ -582,14 +582,18 @@ public class Util {
     }
 
     /**
-     * m到n之间的随机数
-     * @param m
-     * @param n
+     *
+     * @param min
+     * @param max
      * @return
      */
-    public static int getRandomValue(int m,int n)
+    public static int getRandomValue(int min,int max)
     {
-        return (int)(m+Math.random()*(m-n+1));
+//        Random random = new Random();
+//        int value = random.nextInt(max+1);//返回[0,max]
+//        return value;
+
+        return (int)(min+Math.random()*(max-min+1));
     }
 
 }

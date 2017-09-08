@@ -43,6 +43,8 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
     private ProgressBar mprogressBar;
     private LinearLayout loadMoreLayout;
     RecyclerViewOnScroll scrollListener;
+
+
     public PullLoadMoreRecyclerView(Context context) {
         super(context);
         initView(context);
@@ -174,10 +176,12 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
     }
 
     public void setRefreshing(final boolean isRefreshing) {
+        Log.d("dfy","setRefreshing  = "+isRefreshing);
         mSwipeRefreshLayout.post(new Runnable() {
 
             @Override
             public void run() {
+                Log.d("dfy","pullRefreshEnable  = "+pullRefreshEnable);
                 if (pullRefreshEnable)
                     mSwipeRefreshLayout.setRefreshing(isRefreshing);
                 //只出现下拉的动画，不支持下拉刷新功能，所以不判断pullRefreshEnable
@@ -198,7 +202,7 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
         Log.d("dfy","scrollListener = "+scrollListener);
         if(scrollListener==null)
         {
-            scrollListener = new RecyclerViewOnScroll(this);
+            scrollListener = new RecyclerViewOnScroll(this,mSwipeRefreshLayout);
             mRecyclerView.addOnScrollListener(scrollListener);
         }
         scrollListener.setHideCount(count);
@@ -211,13 +215,18 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
     //添加滑动接口(金控用)
     public void setScrollListenerJK(int count,int dataSize)
     {
-        Log.d("dfy","scrollListener = "+scrollListener);
+
+
+
         if(scrollListener==null)
         {
-            scrollListener = new RecyclerViewOnScroll(this);
+            scrollListener = new RecyclerViewOnScroll(this,mSwipeRefreshLayout);
             mRecyclerView.addOnScrollListener(scrollListener);
+
         }
         scrollListener.setCurPageCount(count,dataSize);
+
+
 
     }
 
@@ -332,7 +341,7 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
             },1500);
 
             //防止每次下滑到最后一条都弹出提示，改成false后就第一次弹出，以后不弹出
-            pushRefreshEnable = false;
+//            pushRefreshEnable = false;
         }
 
     }
@@ -351,7 +360,6 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
     public void setPullLoadMoreCompleted() {
         isRefresh = false;
         setRefreshing(false);
-
         isLoadMore = false;
         mFooterView.animate()
                 .translationY(mFooterView.getHeight())
