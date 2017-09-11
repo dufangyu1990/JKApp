@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.jkapp.bean.BaseEneity;
 import com.example.jkapp.helper.GenericHelper;
+import com.example.jkapp.utils.LogUtil;
 import com.example.jkapp.view.IView;
 
 import cn.finalteam.okhttpfinal.HttpCycleContext;
@@ -36,6 +37,7 @@ public class FragmentPresentImpl<T extends IView> extends Fragment implements IP
             return view;
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtil.d("dfy","e.printStackTrace = "+e.toString());
             throw new RuntimeException(e.getMessage());
         }
 

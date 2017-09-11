@@ -30,6 +30,9 @@
     <color name="transparent2">#80000000</color>
     <color name="green">#00C248</color>
     <color name="edittext_hint">#d1d6de</color>
+    <color name="line_color">#191970</color>
+    <color name="uncompleted_color">#A3E0D9</color>
+    <color name="uncompleted_text_color">#F8F8F8</color>
     <!-- 暗灰色 -->
     <color name="dimgrey">#696969</color>
     <!-- 雪白色 -->

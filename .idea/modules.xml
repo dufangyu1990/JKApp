@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/OkHttpFinal/OkHttpFinal.iml" filepath="$PROJECT_DIR$/OkHttpFinal/OkHttpFinal.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stepview/stepview.iml" filepath="$PROJECT_DIR$/stepview/stepview.iml" />
     </modules>
   </component>
 </project>

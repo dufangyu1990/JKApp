@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/fix_twolayout"
+    android:background="@color/zhaungchebiaoqian"
+    android:layout_height="match_parent">
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin20"
+        android:layout_marginBottom="@dimen/margin20"
+        android:background="@color/white"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/margin10"
+            android:drawableTop="@drawable/liandongzhuangche"
+            android:text="联动装车"
+            android:id="@+id/liandongscantv"
+            android:textSize="@dimen/text16"
+            android:textColor="@color/black"
+            android:clickable="true"
+            android:drawablePadding="@dimen/margin5"
+            android:background="@drawable/scanbtn"
+            android:gravity="center"
+            />
+
+
+        <View
+            android:layout_width="0.5dp"
+            android:background="@color/gray"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin30"
+            android:layout_marginBottom="@dimen/margin30"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/putongscantv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/scanbtn"
+            android:clickable="true"
+            android:drawablePadding="@dimen/margin5"
+            android:drawableTop="@drawable/putong"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:padding="@dimen/margin10"
+            android:text="普通装车"
+            android:textSize="@dimen/text16" />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin10"
+        android:background="@color/white"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="终端编号"
+            android:textSize="@dimen/text16"
+            android:gravity="center"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="终端类型"
+            android:textSize="@dimen/text16"
+            android:gravity="center"
+            />
+
+
+    </LinearLayout>
+    <include layout="@layout/view" />
+
+
+
+
+
+
+    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/liandongDevList"
+        android:layout_weight="1"
+   />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_fixlayout"
+        android:background="@color/white"
+        android:visibility="invisible"
+        >
+
+        <TextView
+            android:id="@+id/pre_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/submitbtn"
+            android:clickable="true"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:gravity="center"
+            android:textSize="@dimen/text16"
+            android:text="上一步"
+            android:textColor="@color/choseBlack" />
+
+
+
+
+        <TextView
+            android:id="@+id/next_two_btn"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/submitbtn"
+            android:clickable="true"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:gravity="center"
+            android:textSize="@dimen/text16"
+            android:text="下一步"
+            android:textColor="#ffffff" />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+    <TextView
+        android:id="@+id/pre_button_long"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin20"
+        android:layout_marginRight="@dimen/margin20"
+        android:layout_marginTop="@dimen/margin20"
+        android:layout_marginBottom="@dimen/margin20"
+        android:background="@drawable/login"
+        android:gravity="center"
+        android:padding="@dimen/margin10"
+        android:text="上一步"
+        android:textSize="@dimen/text16"
+        android:textColor="@drawable/log_text_color" />
+
+
+
+
+
+</LinearLayout>
